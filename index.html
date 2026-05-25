@@ -38,16 +38,25 @@
         .site-header p { font-size: 14px; opacity: 0.9; }
         .container { max-width: 800px; margin: 0 auto; padding: 16px; }
         .card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 16px; }
-        .btn { background: #3B82F6; color: white; border: none; padding: 14px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: opacity .2s; }
+        .btn { background: #3B82F6; color: white; border: none; padding: 14px 24px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: opacity .2s; min-height: 48px; touch-action: manipulation; }
         .btn:hover { opacity: 0.9; }
         .btn:active { transform: scale(0.98); }
-        input, select, textarea { width: 100%; padding: 10px 14px; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 15px; margin-top: 4px; font-family: inherit; }
-        input:focus, select:focus { outline: none; border-color: #3B82F6; }
+        .btn:focus-visible { outline: 3px solid #3B82F6; outline-offset: 3px; }
+        input, select, textarea { width: 100%; padding: 10px 14px; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 15px; margin-top: 4px; font-family: inherit; min-height: 44px; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #3B82F6; box-shadow: 0 0 0 3px #3B82F622; }
         label { font-size: 13px; font-weight: 600; color: #555; display: block; margin-top: 14px; margin-bottom: 2px; }
         .result { display: none; }
         .result.show { display: block; }
         .result-value { font-size: 36px; font-weight: 700; color: #3B82F6; text-align: center; padding: 16px 0; }
         .badge { display: inline-block; background: #3B82F620; color: #3B82F6; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        @media (max-width: 480px) {
+            .site-header { padding: 24px 16px; }
+            .site-header h1 { font-size: 20px; }
+            .card { padding: 16px; }
+            .btn { font-size: 15px; padding: 13px 20px; }
+            .result-value { font-size: 28px; }
+        }
         /* ── サービス固有CSS ── */
 
     </style>
@@ -55,13 +64,15 @@
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <header class="site-header">
-        <div class="emoji">👶</div>
+    <a href="#main-content" class="sr-only" style="position:absolute;top:8px;left:8px;background:#3B82F6;color:white;padding:8px 16px;border-radius:6px;z-index:9999;text-decoration:none;font-size:14px;" tabindex="1">メインコンテンツへスキップ</a>
+
+    <header class="site-header" role="banner">
+        <div class="emoji" aria-hidden="true">👶</div>
         <h1>ベビー用品選び診断</h1>
         <p>赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイ...</p>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container" role="main" aria-label="ベビー用品選び診断のメインコンテンツ">
         <ins class="adsbygoogle" style="display:block;margin:12px 0" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
@@ -142,11 +153,11 @@
         </div>
 
         <!-- SNSシェアCTA -->
-        <div class="card" style="margin-top:8px;text-align:center;background:linear-gradient(135deg,#DBEAFE,#EFF6FF);">
+        <div class="card" style="margin-top:8px;text-align:center;background:linear-gradient(135deg,#DBEAFE,#EFF6FF);" role="complementary" aria-label="SNSシェア">
             <p style="font-size:13px;font-weight:600;color:#374151;margin-bottom:10px;">📣 友人・家族にシェアする</p>
             <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-                <a href="https://twitter.com/intent/tweet?text=%E3%83%99%E3%83%93%E3%83%BC%E7%94%A8%E5%93%81%E9%81%B8%E3%81%B3%E8%A8%BA%E6%96%AD%20%23無料ツール&url=https%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:8px 16px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;">𝕏 シェア</a>
-                <a href="https://line.me/R/msg/text/?%E3%83%99%E3%83%93%E3%83%BC%E7%94%A8%E5%93%81%E9%81%B8%E3%81%B3%E8%A8%BA%E6%96%AD%0Ahttps%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" style="background:#00B900;color:white;padding:8px 16px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;">LINE</a>
+                <a href="https://twitter.com/intent/tweet?text=%E3%83%99%E3%83%93%E3%83%BC%E7%94%A8%E5%93%81%E9%81%B8%E3%81%B3%E8%A8%BA%E6%96%AD%20%23無料ツール&url=https%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" aria-label="ベビー用品選び診断をXでシェア" style="background:#1DA1F2;color:white;padding:8px 16px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">𝕏 シェア</a>
+                <a href="https://line.me/R/msg/text/?%E3%83%99%E3%83%93%E3%83%BC%E7%94%A8%E5%93%81%E9%81%B8%E3%81%B3%E8%A8%BA%E6%96%AD%0Ahttps%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" aria-label="ベビー用品選び診断をLINEでシェア" style="background:#00B900;color:white;padding:8px 16px;border-radius:8px;font-size:13px;text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;">LINE</a>
             </div>
         </div>
 
