@@ -3,7 +3,7 @@
   "short_name": "baby-product",
   "start_url": "/baby-product-advisor/",
   "display": "standalone",
-  "background_color": "#6366f1",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "scope": "/baby-product-advisor/"
 }
