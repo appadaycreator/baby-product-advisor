@@ -1,8 +1,9 @@
 {
   "name": "Baby Product Advisor",
   "short_name": "baby-product",
-  "start_url": "/",
+  "start_url": "/baby-product-advisor/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1"
+  "theme_color": "#6366f1",
+  "scope": "/baby-product-advisor/"
 }
