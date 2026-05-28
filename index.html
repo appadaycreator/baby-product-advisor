@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366F1" />
     <title>ベビー用品選び診断【無料】無料診断・アドバイス</title>
     <meta name="description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断。登録不要・完全無料でご利用いただけます。">
     <link rel="canonical" href="https://appadaycreator.com/baby-product-advisor/">
@@ -12,6 +13,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:image" content="https://appadaycreator.com/assets/ogp-default.png">
+<meta property="og:site_name" content="appadaycreator" />
+<meta name="twitter:image" content="https://appadaycreator.com/assets/ogp-default.png" />
+<meta name="twitter:description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断。登録不要・完全無料でご利用いただけます。" />
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://appadaycreator.com/baby-product-advisor/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👶</text></svg>">
@@ -59,7 +63,17 @@
         }
         /* ── サービス固有CSS ── */
 
-    </style>
+    
+@media print{
+  header,footer,nav,button,.no-print,
+  [class*="share"],[class*="affiliate"],[id*="share"],
+  [id*="affiliate"],[id*="banner"],
+  script,noscript{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:12pt}
+  [id*="result"],[id*="output"],[id*="advice"],[id*="diagnosis"],[class*="result"]{display:block!important}
+  a[href]::after{content:none!important}
+}
+</style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
