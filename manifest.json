@@ -4,6 +4,6 @@
   "start_url": "/baby-product-advisor/",
   "display": "standalone",
   "background_color": "#6366f1",
-  "theme_color": "#6366f1",
+  "theme_color": "#7c3aed",
   "scope": "/baby-product-advisor/"
 }
