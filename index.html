@@ -69,6 +69,30 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
             .result-value { font-size: 28px; }
         }
         /* ── サービス固有CSS ── */
+        .quiz-opt { width:100%; padding:12px 14px; margin-bottom:8px; border:2px solid #e5e7eb; border-radius:10px; font-size:14px; cursor:pointer; background:#fff; text-align:left; transition:border-color .15s, background .15s, transform .1s; }
+        .quiz-opt:hover { border-color:#3B82F6; background:#EFF6FF; }
+        .quiz-opt:active { transform:scale(0.99); }
+        .quiz-opt:focus-visible { outline:3px solid #3B82F6; outline-offset:2px; }
+        .quiz-opt.selected { border-color:#3B82F6; background:#3B82F6; color:#fff; transform:scale(0.99); }
+        .quiz-opt:disabled { cursor:not-allowed; }
+        .back-btn { background:none; border:none; color:#94a3b8; font-size:13px; cursor:pointer; padding:4px 0; margin-bottom:8px; display:flex; align-items:center; gap:4px; }
+        .back-btn:hover { color:#3B82F6; }
+        .result-list { list-style:none; padding:0; margin:12px 0; }
+        .result-list li { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid #f1f5f9; font-size:14px; color:#374151; line-height:1.6; }
+        .result-list li:last-child { border-bottom:none; }
+        .result-num { background:#3B82F6; color:#fff; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; margin-top:2px; }
+        .extras-section { background:#f8fafc; border-radius:10px; padding:14px; margin-top:12px; }
+        .extras-section h4 { font-size:13px; font-weight:700; color:#3B82F6; margin-bottom:8px; }
+        .extras-section ul { padding-left:18px; margin:0; }
+        .extras-section ul li { font-size:13px; color:#475569; line-height:1.7; }
+        .result-share { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap; }
+        .result-share a { padding:8px 16px; border-radius:8px; font-size:13px; text-decoration:none; font-weight:600; min-height:40px; display:inline-flex; align-items:center; }
+        .prev-result-banner { background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:10px; padding:12px 16px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+        .prev-result-banner p { font-size:13px; color:#1e40af; font-weight:600; }
+        .prev-result-banner button { background:none; border:1.5px solid #3B82F6; color:#3B82F6; border-radius:8px; padding:6px 12px; font-size:12px; cursor:pointer; font-weight:600; white-space:nowrap; }
+        .prev-result-banner button:hover { background:#3B82F6; color:#fff; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        .fade-in { animation:fadeIn .3s ease; }
 
     
 @media print{
@@ -90,20 +114,22 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     <header class="site-header" role="banner">
         <div class="emoji" aria-hidden="true">👶</div>
         <h1>ベビー用品選び診断</h1>
-        <p>赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイ...</p>
+        <p>赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断。登録不要・完全無料。</p>
     </header>
 
     <main id="main-content" class="container" role="main" aria-label="ベビー用品選び診断のメインコンテンツ">
         <ins class="adsbygoogle" style="display:block;margin:12px 0" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+        <div id="prev-result-area"></div>
         <div class="card" id="quiz-start">
           <h2 style="font-size:18px;font-weight:700;margin-bottom:12px;">👶 ベビー用品選び診断</h2>
-          <p style="color:#666;font-size:14px;margin-bottom:8px;">赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイ...</p>
-          <ul style="font-size:13px;color:#94a3b8;margin:0 0 16px 16px;"><li>質問数：5問</li><li>所要時間：約1分</li></ul>
-          <button class="btn" onclick="startQuiz()">診断スタート →</button>
+          <p style="color:#666;font-size:14px;margin-bottom:8px;">赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断。全5問・約1分で完了します。</p>
+          <ul style="font-size:13px;color:#94a3b8;margin:0 0 16px 16px;"><li>質問数：5問</li><li>所要時間：約1分</li><li>登録不要・完全無料</li></ul>
+          <button class="btn" id="start-btn">診断スタート →</button>
         </div>
         <div id="quiz-area" style="display:none;">
+          <button class="back-btn" id="back-btn" style="display:none;" aria-label="前の質問に戻る">← 前の質問に戻る</button>
           <div style="font-size:12px;color:#999;margin-bottom:8px;">
             質問 <span id="q-num">1</span> / <span id="q-total">5</span>
           </div>
@@ -111,13 +137,16 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
             <div id="q-bar" style="height:100%;background:#3B82F6;border-radius:2px;transition:width .3s;width:20%;"></div>
           </div>
           <p id="q-text" style="font-size:16px;font-weight:600;margin-bottom:16px;"></p>
-          <div id="q-options" class="space-y-2"></div>
+          <div id="q-options"></div>
         </div>
         <div class="result" id="result">
-          <div class="card">
-            <h3 id="r-title" style="font-size:18px;font-weight:700;margin-bottom:8px;color:#3B82F6;"></h3>
-            <p id="r-desc" style="color:#444;font-size:14px;line-height:1.7;"></p>
-            <button class="btn" style="margin-top:16px;" onclick="location.reload()">もう一度診断</button>
+          <div class="card fade-in">
+            <h3 id="r-title" style="font-size:18px;font-weight:700;margin-bottom:4px;color:#3B82F6;"></h3>
+            <p id="r-subtitle" style="font-size:12px;color:#94a3b8;margin-bottom:12px;"></p>
+            <ul class="result-list" id="r-items" aria-label="おすすめベビー用品リスト"></ul>
+            <div id="r-extras"></div>
+            <div class="result-share" id="r-share" aria-label="診断結果をシェア"></div>
+            <button class="btn" style="margin-top:12px;" id="retry-btn">もう一度診断する</button>
           </div>
         </div>
 
@@ -188,8 +217,8 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
         </div>
     </main>
 
-    <footer style="text-align:center;padding:20px;color:white;font-size:12px;opacity:0.75;margin-top:8px;">
-        <p><a href="https://appadaycreator.github.io/" style="color:white;">AppADayCreator</a>
+    <footer style="text-align:center;padding:20px;color:white;font-size:12px;background:#374151;margin-top:8px;">
+        <p><a href="https://appadaycreator.com/" style="color:white;">AppADayCreator</a>
         | <a href="privacy-policy.html" style="color:white;">プライバシーポリシー</a>
         | <a href="terms.html" style="color:white;">利用規約</a>
         | <a href="contact.html" style="color:white;">お問い合わせ</a></p>
@@ -205,44 +234,188 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       { text:'Q4. 重視することは？', opts:['安全性・信頼できるブランド','コスパ・無駄なく揃えたい','利便性・時短・楽に育児したい','エコ・サステナブル'] },
       { text:'Q5. ベビー用品の予算は？（出産準備全体）', opts:['10万円以下に抑えたい','10〜20万円','20〜40万円でしっかり揃えたい','レンタル活用で初期投資を下げたい'] }
     ];
-    const RESULTS = [
-      { title:'👶 出産準備必需品リスト — 産前に揃えるべき5選', desc:'産前に揃えるべき最重要アイテムは①ベビーベッド（or バウンサー）②ベビー服（50〜60cm 5〜6枚）③オムツ・おしりふき④哺乳瓶（混合・ミルクなら必須）⑤チャイルドシートの5点です。ベビーカーは生後1ヶ月以降でOK。レンタルを活用すればベビーベッド・ハイローチェアなど使用期間が短い大型品を節約できます。西松屋・アカチャンホンポのセール・中古も賢く活用しましょう。' },
-      { title:'🍼 新生児期の必需品 — 0〜3ヶ月に本当に必要なもの', desc:'新生児期に特に必要なのは①おくるみ（スワドルアップが大人気）②授乳クッション③ベビーモニター④白色雑音機（ホワイトノイズ）⑤沐浴グッズ（ベビーバス・ベビーソープ）です。エルゴやベビービョルンの抱っこ紐は首が据わる3ヶ月以降から活躍します。ベビーカーは外出が増える2〜3ヶ月ごろに購入しても遅くありません。' },
-      { title:'🌟 離乳食・外出期の必需品 — 4〜8ヶ月向け', desc:'離乳食開始（6ヶ月ごろ）に向けて①ハイチェア（BEABAやカトージが人気）②離乳食セット（スプーン・こし器・製氷皿）③バウンサーまたはハイローチェア④ヒップシート型抱っこ紐（コニーなど軽量タイプ）が重要です。ベビーカーはA型（リクライニング）からB型（折り畳み軽量）への移行時期。外出が増える時期なので防水ベビーバッグも揃えましょう。' },
-      { title:'🚶 つかまり立ち〜歩き始め期 — 安全グッズと靴が最優先', desc:'この時期に最優先すべきは①ベビーゲート（階段・キッチン周り）②コーナーガード（テーブル角）③ファーストシューズ（アシックス・ニューバランスが国内人気）④手押し車（プレウォーカー）⑤後追い対策のベビーサークルです。転倒・誤飲対策の安全用品を揃えることが最重要。ベビーカーはバギータイプに切り替える家庭も多い時期です。' }
+
+    /* Q1月齢別：基本おすすめリスト */
+    const BASE_RESULTS = [
+      {
+        title:'👶 出産準備必需品リスト — 産前に揃えるべき5選',
+        subtitle:'妊娠中〜出産前の準備期向けアドバイス',
+        items:['ベビーベッド or バウンサー（寝る場所の確保が最優先）','ベビー服 50〜60cm サイズを5〜6枚（洗い替え考慮）','オムツ（新生児用 1パック）・おしりふき（たっぷり備蓄）','チャイルドシート（退院時から必須・カーシェア利用者も必要）','ベビーバス・沐浴グッズ一式（退院直後から使用）']
+      },
+      {
+        title:'🍼 新生児期の必需品 — 0〜3ヶ月に本当に必要なもの',
+        subtitle:'0〜3ヶ月（新生児期）向けアドバイス',
+        items:['おくるみ / スワドルアップ（モロー反射対策・寝かしつけに必須）','授乳クッション（母乳・混合どちらでも腰への負担軽減）','ベビーモニター（親の休息確保に大きく貢献）','ホワイトノイズマシン or アプリ（泣き止み・寝かしつけ効果大）','抱っこ紐（首据わり前対応タイプ：キューズベリー・エルゴなど）']
+      },
+      {
+        title:'🌟 離乳食・外出期の必需品 — 4〜8ヶ月向け',
+        subtitle:'4〜8ヶ月（寝返り〜離乳食開始）向けアドバイス',
+        items:['ハイチェア（BEABA・カトージ・バンボなど離乳食から長く使える）','離乳食セット（スプーン・こし器・製氷皿・冷凍保存容器）','ヒップシート型抱っこ紐（コニー・エルゴ ADAPT が人気）','B型ベビーカー（折り畳み軽量タイプへの切り替え時期）','防水ベビーバッグ（外出頻度が増える時期に大活躍）']
+      },
+      {
+        title:'🚶 つかまり立ち〜歩き始め期 — 安全グッズ最優先',
+        subtitle:'9ヶ月〜1歳（つかまり立ち〜歩き始め）向けアドバイス',
+        items:['ベビーゲート（階段・キッチン・廊下に設置を最優先）','コーナーガード（テーブル・棚の角は必ず保護）','ファーストシューズ（アシックス・ニューバランスが定番）','手押し車 / プレウォーカー（歩行練習と体幹強化に有効）','ベビーサークル（後追い対策・安全な遊び場の確保）']
+      }
     ];
+
+    /* Q2住まい別アドバイス */
+    const SPACE_ADVICE = [
+      { label:'🏠 狭いスペース向けのコツ', tips:['折り畳み可能な省スペース型ベビーベッドが◎','ハイローチェアはベビーベッド兼用で一石二鳥','大型家電・家具はレンタルで初期投資を抑える'] },
+      { label:'🏡 広い家向けのコツ', tips:['ベビーモニターを各部屋に配置すると安心','スペースを活かした大型プレイマットが快適','ベビージムや手押し車も早めに準備可能'] },
+      { label:'👪 実家・同居向けのコツ', tips:['祖父母の家にも安全グッズ（ゲート・コーナーガード）を設置','チャイルドシートは車の台数分検討を','既存の家具・ベッドを活用してコストを最小化'] },
+      { label:'🚛 引越し予定ありのコツ', tips:['引越し前は最小限の必需品だけ購入','大型品は引越し先のサイズ確認後に購入推奨','レンタルや中古活用で引越しの荷物を減らす'] }
+    ];
+
+    /* Q3授乳別アドバイス */
+    const FEEDING_ADVICE = [
+      { label:'🤱 母乳育児向けのコツ', tips:['授乳クッション・乳頭保護クリーム（ランシノーなど）は必須','搾乳機（電動）は職場復帰・外出時に大活躍','授乳ブラジャー・授乳口付き服を早めに準備'] },
+      { label:'🍼 混合育児向けのコツ', tips:['哺乳瓶はピジョン・ヌークなど2〜3本から試す','ミルク調乳ポットで夜中の調乳を時短化','粉ミルクは1缶試して合う銘柄を見つけてから買いだめ'] },
+      { label:'🍼 ミルク育児向けのコツ', tips:['哺乳瓶は形状違いを2種類用意してから銘柄を絞る','液体ミルク（アイクレオなど）を外出用に備蓄','電子レンジ対応の哺乳瓶消毒器が便利'] },
+      { label:'📋 授乳方法未定のコツ', tips:['哺乳瓶・粉ミルクを最小限準備しておくと安心','授乳クッションは母乳・ミルクどちらでも役立つ','産後に助産師へ相談しながら方法を決めるのがベスト'] }
+    ];
+
+    /* Q4重視ポイント別アドバイス */
+    const PRIORITY_ADVICE = [
+      { label:'🛡 安全性・信頼ブランド重視のコツ', tips:['国内メーカー（コンビ・アップリカ・ピジョン）は品質基準が厳しい','SGマーク・PSCマーク取得製品を優先選択','新品購入が安心。ベビーカー・チャイルドシートは特に中古を避ける'] },
+      { label:'💴 コスパ重視のコツ', tips:['西松屋・アカチャンホンポのプライベートブランドが高コスパ','フリマアプリ（メルカリ）の活用で衣類・おもちゃを節約','本当に必要なものだけ揃えて「とりあえず買い」を避ける'] },
+      { label:'⚡ 利便性・時短重視のコツ', tips:['電動搾乳機・ミルク調乳ポット・自動スイングバウンサーが時短の三種の神器','ロボット掃除機（ルンバ等）を育児前に導入しておくと大幅時短','宅配食材サービスの活用で買い物負担を大幅軽減'] },
+      { label:'🌱 エコ・サステナブル重視のコツ', tips:['布おむつ（ベビーランド・GOサンプルなど）で廃棄量を削減','認定オーガニックコットン素材のベビー服を選ぶ','ベビー用品のレンタル・シェアリングでサステナブル育児'] }
+    ];
+
+    /* Q5予算別アドバイス */
+    const BUDGET_ADVICE = [
+      { label:'💰 10万円以下に抑えるコツ', tips:['必需品8点（衣類・おむつ・チャイルドシート・沐浴・寝具・授乳用品）に絞る','ベビーカー・ハイローチェアはレンタルで初期費用ゼロ','赤ちゃん本舗のアウトレット・フリマアプリを積極活用'] },
+      { label:'💰 10〜20万円の賢い使い方', tips:['チャイルドシート・ベビーカーに5〜7万円、残りを消耗品に','抱っこ紐は本体3万円台のエルゴが長く使えてコスパ◎','ベビーベッドはレンタルにしてベビーカーに予算を回す'] },
+      { label:'💰 20〜40万円でしっかり揃えるコツ', tips:['チャイルドシートは回転式（10万円台）が長く使えてコスト効率◎','A型ベビーカー（5〜10万円台）は生後すぐから3歳まで使用可能','電動搾乗機・スマートベビーモニター等の便利家電も揃えると快適'] },
+      { label:'🔄 レンタル活用で賢く節約するコツ', tips:['ダスキンやベビレンタのサービスで大型品を月額レンタル','ベビーベッド（月1,500円〜）・ハイローチェア（月2,000円〜）がお得','使用期間の短いバウンサー・哺乳類はレンタルが特に効果的'] }
+    ];
+
     function getResult(answers) {
-      const scores = [0,0,0,0];
       const a = answers.map(x => x.idx);
-      if(a[0]===0) scores[0]+=5;
-      if(a[0]===1) scores[1]+=5;
-      if(a[0]===2) scores[2]+=5;
-      if(a[0]===3) scores[3]+=5;
-      if(a[4]===0) { scores[0]+=1; }
-      if(a[4]===3) { scores[0]+=1; scores[1]+=1; }
-      if(a[3]===1) { scores[0]+=1; }
-      if(a[3]===2) { scores[1]+=1; scores[2]+=1; }
-      const best = scores.indexOf(Math.max(...scores));
-      return RESULTS[best];
+      const base = BASE_RESULTS[a[0]] || BASE_RESULTS[0];
+      const space = SPACE_ADVICE[a[1]] || null;
+      const feeding = FEEDING_ADVICE[a[2]] || null;
+      const priority = PRIORITY_ADVICE[a[3]] || null;
+      const budget = BUDGET_ADVICE[a[4]] || null;
+      return { base, extras: [space, feeding, priority, budget].filter(Boolean) };
     }
-    // ★以下変更不要★
-    const BTN='#3B82F6'; let cur=0; const ans=[];
-    document.addEventListener('DOMContentLoaded',()=>{ document.getElementById('q-total').textContent=QUESTIONS.length; });
-    function startQuiz(){ cur=0;ans.length=0; document.getElementById('quiz-start').style.display='none'; document.getElementById('quiz-area').style.display='block'; document.getElementById('result').classList.remove('show'); renderQ(); }
-    function renderQ(){
-      const q=QUESTIONS[cur];
-      document.getElementById('q-num').textContent=cur+1;
-      document.getElementById('q-bar').style.width=((cur+1)/QUESTIONS.length*100)+'%';
-      document.getElementById('q-text').textContent=q.text;
-      document.getElementById('q-options').innerHTML=q.opts.map((o,i)=>`<button onclick="answer(${i})" style="width:100%;padding:12px;margin-bottom:8px;border:2px solid #e5e7eb;border-radius:10px;font-size:14px;cursor:pointer;background:#fff;text-align:left;">${o}</button>`).join('');
+
+    const LS_KEY = 'baby_advisor_last_result';
+    let cur = 0;
+    const ans = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('q-total').textContent = QUESTIONS.length;
+      document.getElementById('start-btn').addEventListener('click', startQuiz);
+      document.getElementById('back-btn').addEventListener('click', goBack);
+      document.getElementById('retry-btn').addEventListener('click', () => location.reload());
+      loadPrevResult();
+    });
+
+    function loadPrevResult() {
+      try {
+        const saved = localStorage.getItem(LS_KEY);
+        if (!saved) return;
+        const data = JSON.parse(saved);
+        const area = document.getElementById('prev-result-area');
+        area.innerHTML = `<div class="prev-result-banner"><p>📋 前回の診断結果：${data.title}</p><button id="show-prev-btn">前回の結果を見る</button></div>`;
+        document.getElementById('show-prev-btn').addEventListener('click', () => {
+          renderResult(data.result);
+          area.style.display = 'none';
+          document.getElementById('quiz-start').style.display = 'none';
+        });
+      } catch(e) { /* localStorage 非対応ブラウザは無視 */ }
     }
-    function answer(idx){ ans.push({idx}); cur++; if(cur>=QUESTIONS.length) showResult(); else renderQ(); }
-    function showResult(){
-      document.getElementById('quiz-area').style.display='none';
-      const r=getResult(ans);
-      document.getElementById('r-title').textContent=r.title;
-      document.getElementById('r-desc').textContent=r.desc;
+
+    function startQuiz() {
+      cur = 0;
+      ans.length = 0;
+      document.getElementById('quiz-start').style.display = 'none';
+      document.getElementById('prev-result-area').style.display = 'none';
+      document.getElementById('quiz-area').style.display = 'block';
+      document.getElementById('result').classList.remove('show');
+      renderQ();
+    }
+
+    function renderQ() {
+      const q = QUESTIONS[cur];
+      document.getElementById('q-num').textContent = cur + 1;
+      document.getElementById('q-bar').style.width = ((cur + 1) / QUESTIONS.length * 100) + '%';
+      document.getElementById('q-text').textContent = q.text;
+      document.getElementById('back-btn').style.display = cur > 0 ? 'flex' : 'none';
+      const optArea = document.getElementById('q-options');
+      optArea.innerHTML = q.opts.map((o, i) =>
+        `<button class="quiz-opt" data-idx="${i}" aria-label="${o}">${o}</button>`
+      ).join('');
+      optArea.querySelectorAll('.quiz-opt').forEach(btn => {
+        btn.addEventListener('click', () => answer(parseInt(btn.dataset.idx, 10), btn));
+      });
+    }
+
+    function goBack() {
+      if (cur <= 0) return;
+      ans.pop();
+      cur--;
+      renderQ();
+    }
+
+    function answer(idx, btn) {
+      /* 全ボタン無効化して選択フィードバック */
+      document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
+      btn.classList.add('selected');
+      setTimeout(() => {
+        ans.push({ idx });
+        cur++;
+        if (cur >= QUESTIONS.length) {
+          document.getElementById('quiz-area').style.display = 'none';
+          const result = getResult(ans);
+          saveResult(result, ans);
+          renderResult(result);
+        } else {
+          renderQ();
+        }
+      }, 180);
+    }
+
+    function saveResult(result, answers) {
+      try {
+        localStorage.setItem(LS_KEY, JSON.stringify({
+          title: result.base.title,
+          result,
+          answers: answers.map(a => a.idx),
+          date: new Date().toLocaleDateString('ja-JP')
+        }));
+      } catch(e) { /* 無視 */ }
+    }
+
+    function renderResult(result) {
+      const { base, extras } = result;
+      document.getElementById('r-title').textContent = base.title;
+      document.getElementById('r-subtitle').textContent = base.subtitle;
+
+      /* 必需品リスト */
+      document.getElementById('r-items').innerHTML = base.items.map((item, i) =>
+        `<li><span class="result-num" aria-hidden="true">${i + 1}</span><span>${item}</span></li>`
+      ).join('');
+
+      /* 追加アドバイス（Q2〜Q5反映） */
+      const extrasHtml = extras.map(e =>
+        `<div class="extras-section"><h4>${e.label}</h4><ul>${e.tips.map(t => `<li>${t}</li>`).join('')}</ul></div>`
+      ).join('');
+      document.getElementById('r-extras').innerHTML = extrasHtml;
+
+      /* シェアボタン */
+      const shareText = encodeURIComponent(`${base.title} #ベビー用品選び診断`);
+      const shareUrl = encodeURIComponent('https://appadaycreator.com/baby-product-advisor/');
+      document.getElementById('r-share').innerHTML = `
+        <p style="font-size:12px;color:#94a3b8;width:100%;margin-bottom:4px;">📣 結果をシェアする</p>
+        <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" aria-label="診断結果をXでシェア" style="background:#1DA1F2;color:white;">𝕏 シェア</a>
+        <a href="https://line.me/R/msg/text/?${shareText}%0A${shareUrl}" target="_blank" rel="noopener" aria-label="診断結果をLINEでシェア" style="background:#00B900;color:white;">LINE</a>
+      `;
+
       document.getElementById('result').classList.add('show');
+      document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     </script>
 </body>
