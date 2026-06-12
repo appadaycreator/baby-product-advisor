@@ -1,0 +1,68 @@
+Fetch this design file, read its readme, and implement the relevant aspects of the design. https://api.anthropic.com/v1/design/h/nz1nXbVUjGVZOimH6HLewA?open_file=index.html
+Implement: ## 指示
+ClaudeDesignによって作成されたデザインを効果的に反映してほしい。
+
+**必ず最初に以下のデザイン参照画像を Read tool で読み込み、配色・レイアウト・フォント・セクション構成を視覚的に把握してから実装を開始してください:**
+- /Users/masayukitokunaga/workspace/30service/baby-product-advisor/_design/2026-06-13_0152/01_design.png（LPページ全体デザイン）
+- /Users/masayukitokunaga/workspace/30service/baby-product-advisor/_design/2026-06-13_0152/02_design.png（サービスページデザイン）
+
+- LPページとサービスページのデザインを実際のWebサービスに反映する。
+- **LPページは必ず `lp/index.html` として新規作成すること**（ディレクトリが存在しない場合は `mkdir lp` で作成）
+- サービスページは既存の / を更新。ユーザの利用動線を優先にしつつデザイン変更して。
+- コンテンツの目的に合わせて良いが、PCでもモバイルでも見れるように調整してほしい。
+- 全体のトップページのサービスページへのリンクは、LPページのURL（/lp/）に変更する
+- 今回の新デザイン（LPページのテーマカラーや素材・文字フォント・画像など）を該当既存サービスの全ページに刷新すること
+
+## ⚠️ 作業スコープ（必ず守ること）
+
+**読み込み・編集するファイルはこれだけ：**
+- `index.html`（サービスページ）
+- `lp/index.html`（LPページ・存在しない場合は新規作成）
+- 既存の `.css` ファイル（存在する場合のみ）
+
+**それ以外のファイル（contact.html, privacy-policy.html, terms.html, usage.html 等）は読まない・触らない。**
+ディレクトリ探索・ファイル一覧取得も不要。上記ファイルを直接編集すること。
+
+## ⚠️ 必須：実装完了後に必ず以下を実行すること（ローカルサーバーテストは不要）
+
+```bash
+git add -A
+git commit -m "Apply: design update with LP page"
+git push origin main
+```
+
+**git push origin main を実行してから完了とすること。push 完了のログを確認すること。**
+ローカルHTTPサーバーでのテストは不要。push が完了した時点で作業完了。
+
+## Claude Design プロジェクト
+
+
+Claude Design で生成されたコンポーネント（JSX・CSS）やプロトタイプの構成・スタイルを参考に実装すること。
+
+## デザイン参照画像（ローカル）
+- LP全体デザイン:      /Users/masayukitokunaga/workspace/30service/baby-product-advisor/_design/2026-06-13_0152/01_design.png
+- サービスページデザイン: /Users/masayukitokunaga/workspace/30service/baby-product-advisor/_design/2026-06-13_0152/02_design.png
+- アイコン素材シート:   /Users/masayukitokunaga/workspace/30service/baby-product-advisor/_design/2026-06-13_0152/03_design.png
+- 分割済みアイコン:    /Users/masayukitokunaga/workspace/30service/baby-product-advisor/assets/icons/split
+
+## 制約
+- GTM・GA4・AdSenseタグは変更しない
+- アフィリエイトリンクは変更しない
+- コアJSロジック（診断・計算ロジック）は変更しない
+
+## 対象プロジェクト
+318 ベビー用品選び診断 baby-product-advisor https://appadaycreator.com/baby-product-advisor/
+/Users/masayukitokunaga/workspace/30service/baby-product-advisor/
+
+## ②デザイン改善要約（反映すること）
+SUMMARY_JSON:{"a":["複数の子どもの成長曲線を1つのグラフに重ねて比較できる機能","頭囲・胸囲など身長・体重以外の測定値に対応した多項目計算","計算結果をPDF形式で医療機関に提出可能な形式で出力"],"b":["SNSシェア機能とSNS投稿テンプレート（成長を家族・友人と共有）","医師への相談リンク機能（−2SD以下の結果時に医療機関検索と予約誘導）","モバイル最適化UI改善（入力フォームの分割ステップ化）"],"d":["1回の計算に特化したシンプル設計（記録アプリとの明確な差別化）","身長・体重・Kaup指数の関連性を1ビューで示すダッシュボード","厚生労働省基準に基づく医学的背景説明コンテンツ（親の不安軽減）"],"seo_h1":"子どもの成長曲線チェッカー｜身長・体重からパーセンタイルを無料診断","seo_meta":"お子さんの身長・体重から成長パーセンタイル・Kaup指数を無料診断。医学基準に基づく成長評価、複数人比較機能。登録不要・スマートフォン対応。","forbidden":["GTM-TXQGZRF9","ca-pub-8427583028015858","a8.net","rakuten-affiliate","interp","zToApproxPct","pctLabel","pctColor","kaupEval","getAdvice","drawChart","switchTab","handleTabKeydown","toggleGoalSection","saveGoals","displayGoalAchievement","printResults","exportToCSV","clearErrors","showError","calculate","clearInputs","updateAgeDisplay","updateThemeColor","t","xScale","yScale","hDiff","wDiff","hZ","wZ","kaup","toBarPct"]}
+
+## 現在のindex.htmlの構成情報（事前読み込み済み・tool callでのファイル読み込み不要）
+<title>ベビー用品選び診断【無料】無料診断・アドバイス</title>
+<meta name="description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断">
+<!-- GTM: GTM-TXQGZRF9 -->
+<!-- GA4: G-ZDPNYD2875 -->
+<!-- AdSense: ca-pub-8427583028015858 -->
+<!-- Affiliate A8: A8.net/Amazon） -->
+<!-- JS functions: gtag, getResult, loadHistory, saveToHistory, updateHistoryBanner, showPreviousResult, toggleHistoryList, renderHistoryList, showHistoryItem, renderChart, displayResult, exportResult, startQuiz, renderQ, answer, showResult, loadGoals, saveGoals, openGoalModal, updateScoreDisplay, closeGoalModal, clearGoals, updateGoalDashboard, installApp, dismissInstallBanner, percent -->
+<h1>ベビー用品選び診断</h1>

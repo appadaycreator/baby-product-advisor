@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ベビー用品選び診断【無料】はじめてのベビー用品選び、迷わない。</title>
+  <meta name="description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを無料で診断。登録不要・1分で完了。">
+  <meta name="author" content="AppADayCreator | Tech&Brace">
+  <link rel="canonical" href="https://appadaycreator.com/baby-product-advisor/lp/">
+  <meta property="og:title" content="ベビー用品選び診断【無料】はじめてのベビー用品選び、迷わない。">
+  <meta property="og:description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを無料で診断。">
+  <meta property="og:url" content="https://appadaycreator.com/baby-product-advisor/lp/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://appadaycreator.com/baby-product-advisor/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👶</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDPNYD2875"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZDPNYD2875',{send_page_view:false});</script>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --green: #6DB88A;
+      --green-light: #EEF8F2;
+      --green-dark: #4A9A6A;
+      --pink: #F4A7B9;
+      --pink-light: #FDE8EF;
+      --yellow: #F7D87C;
+      --yellow-light: #FEF8E3;
+      --coral: #F47C6A;
+      --coral-light: #FDECEA;
+      --bg: #FFF9F5;
+      --bg2: #FFF4EE;
+      --text: #3D2C2C;
+      --text-mid: #7A6060;
+      --text-light: #A08888;
+      --white: #FFFFFF;
+      --radius: 20px;
+      --shadow: 0 4px 24px rgba(109,184,138,0.13);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* NAV */
+    .nav { background: var(--white); box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); font-weight: 800; font-size: 16px; }
+    .nav-logo span { font-size: 22px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 8px; transition: background .2s; }
+    .nav-links a:hover { background: var(--green-light); color: var(--green-dark); }
+    .nav-cta { background: var(--coral); color: white; padding: 8px 18px; border-radius: 24px; font-size: 13px; font-weight: 700; text-decoration: none; transition: opacity .2s; white-space: nowrap; }
+    .nav-cta:hover { opacity: 0.88; }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-logo { font-size: 14px; }
+    }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #FFF4EC 0%, #FFF0F5 40%, #F0FAF4 100%); padding: 60px 20px 40px; }
+    .hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--pink-light); color: #C0637A; border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+    .hero-title { font-size: clamp(28px, 5vw, 46px); font-weight: 800; line-height: 1.3; color: var(--text); margin-bottom: 16px; }
+    .hero-title em { color: var(--green-dark); font-style: normal; }
+    .hero-sub { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 28px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--coral); color: white; padding: 16px 36px; border-radius: 32px; font-size: 18px; font-weight: 800; text-decoration: none; box-shadow: 0 6px 20px rgba(244,124,106,0.38); transition: transform .2s, box-shadow .2s; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,124,106,0.44); }
+    .hero-cta-note { font-size: 11px; display: block; margin-top: 10px; color: var(--text-light); }
+    .hero-illus { display: flex; justify-content: center; align-items: center; }
+    .hero-illus-box { background: white; border-radius: 32px; box-shadow: var(--shadow); padding: 32px; width: 280px; height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .hero-illus-box .big-emoji { font-size: 80px; line-height: 1; }
+    .hero-illus-box p { font-size: 13px; color: var(--text-mid); text-align: center; }
+    .hero-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .chip { background: white; border: 1.5px solid var(--green); color: var(--green-dark); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-illus { order: -1; }
+      .hero-illus-box { width: 200px; height: 200px; }
+      .hero-illus-box .big-emoji { font-size: 56px; }
+    }
+
+    /* SECTION common */
+    .section { padding: 64px 20px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 700; color: var(--green-dark); background: var(--green-light); padding: 4px 14px; border-radius: 12px; display: inline-block; margin-bottom: 12px; letter-spacing: .05em; }
+    .section-title { font-size: clamp(20px, 3.5vw, 30px); font-weight: 800; margin-bottom: 8px; }
+    .section-sub { color: var(--text-mid); font-size: 14px; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+
+    /* CONCERNS */
+    .concerns { background: var(--green-light); }
+    .concerns-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .concern-card { background: white; border-radius: var(--radius); padding: 20px; display: flex; gap: 12px; align-items: flex-start; box-shadow: 0 2px 12px rgba(109,184,138,0.1); }
+    .concern-icon { font-size: 28px; flex-shrink: 0; }
+    .concern-text { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-weight: 500; }
+    .concern-text strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+
+    /* FEATURES */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .feature-card { background: white; border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border-top: 4px solid var(--green); }
+    .feature-icon { font-size: 36px; margin-bottom: 12px; }
+    .feature-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .feature-desc { font-size: 13px; color: var(--text-mid); line-height: 1.75; }
+
+    /* STEPS */
+    .steps-bg { background: var(--bg2); }
+    .steps-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; }
+    .steps-list::before { content:''; position:absolute; top:40px; left:16.6%; right:16.6%; height:3px; background:linear-gradient(90deg, var(--green) 0%, var(--yellow) 50%, var(--coral) 100%); border-radius:2px; }
+    .step-card { background: white; border-radius: var(--radius); padding: 32px 20px 24px; text-align: center; box-shadow: var(--shadow); position: relative; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: white; margin: 0 auto 16px; }
+    .step-num.s1 { background: var(--green); }
+    .step-num.s2 { background: var(--yellow); color: #7A6000; }
+    .step-num.s3 { background: var(--coral); }
+    .step-icon { font-size: 32px; margin-bottom: 12px; }
+    .step-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .step-desc { font-size: 12px; color: var(--text-mid); line-height: 1.7; }
+    @media (max-width: 640px) {
+      .steps-list { grid-template-columns: 1fr; }
+      .steps-list::before { display: none; }
+    }
+
+    /* RESULT PREVIEW */
+    .result-preview { background: var(--green-light); }
+    .result-mock { background: white; border-radius: var(--radius); box-shadow: var(--shadow); max-width: 480px; margin: 0 auto; overflow: hidden; }
+    .result-mock-head { background: linear-gradient(135deg, var(--green) 0%, #5AAA78 100%); padding: 20px 24px; color: white; }
+    .result-mock-head h3 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+    .result-mock-head p { font-size: 12px; opacity: 0.9; }
+    .result-mock-body { padding: 20px 24px; }
+    .result-chart-fake { display: flex; justify-content: center; margin-bottom: 16px; }
+    .result-donut { width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--green) 0% 45%, var(--yellow) 45% 70%, var(--pink) 70% 88%, #B0D9C5 88% 100%); display: flex; align-items: center; justify-content: center; }
+    .result-donut-inner { width: 72px; height: 72px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--text-mid); text-align: center; font-weight: 700; }
+    .result-items { display: flex; flex-direction: column; gap: 8px; }
+    .result-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text); }
+    .result-item-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .result-share { display: flex; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #EEE; }
+    .share-btn { flex: 1; padding: 8px; border-radius: 10px; font-size: 12px; font-weight: 700; text-align: center; border: none; cursor: pointer; }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .testimonial-card { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .testimonial-stars { color: #F7D87C; font-size: 16px; margin-bottom: 10px; }
+    .testimonial-text { font-size: 13px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+    .testimonial-author { font-size: 12px; font-weight: 700; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
+    .testimonial-author::before { content: ''; display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: var(--green-light); }
+
+    /* SNS */
+    .sns-section { background: var(--bg2); }
+    .sns-icons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+    .sns-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; text-decoration: none; transition: transform .2s; }
+    .sns-icon:hover { transform: scale(1.1); }
+
+    /* CTA BOTTOM */
+    .cta-bottom { background: linear-gradient(135deg, var(--green) 0%, #5AAA78 100%); padding: 64px 20px; text-align: center; color: white; }
+    .cta-bottom h2 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
+    .cta-bottom p { font-size: 15px; opacity: 0.9; margin-bottom: 32px; }
+    .cta-big-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--green-dark); padding: 18px 48px; border-radius: 40px; font-size: 20px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 28px rgba(0,0,0,0.18); transition: transform .2s; }
+    .cta-big-btn:hover { transform: translateY(-2px); }
+    .cta-note { font-size: 12px; opacity: 0.8; margin-top: 16px; }
+
+    /* FOOTER */
+    footer { background: #3D2C2C; color: #C8B8B8; text-align: center; padding: 24px 20px; font-size: 12px; }
+    footer a { color: #D4C4C4; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* QUICK INFO BAR */
+    .quick-bar { background: var(--yellow-light); border-top: 3px solid var(--yellow); padding: 12px 20px; }
+    .quick-bar-inner { max-width: 1080px; margin: 0 auto; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+    .quick-item { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #7A5C00; }
+
+    /* AD */
+    .ad-wrap { max-width: 1080px; margin: 0 auto; padding: 12px 20px; }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+    <div class="nav-inner">
+      <a class="nav-logo" href="/baby-product-advisor/lp/">
+        <span>👶</span>ベビー用品選び診断
+      </a>
+      <div class="nav-links">
+        <a href="#how">使い方</a>
+        <a href="#features">診断について</a>
+        <a href="#faq">FAQ</a>
+        <a href="#reviews">カスタマーレビュー</a>
+        <a class="nav-cta" href="/baby-product-advisor/">診断スタート →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🌟 登録不要・完全無料</div>
+        <h1 class="hero-title" id="hero-h1">はじめての<br><em>ベビー用品選び、</em><br>迷わない。</h1>
+        <p class="hero-sub">月齢・住まい・授乳スタイル・予算から<br>あなたに必要なものを5問でズバリ提案。</p>
+        <a class="hero-cta" href="/baby-product-advisor/">
+          🍼 無料で診断スタート
+        </a>
+        <span class="hero-cta-note">質問5問・所要時間 約1分・登録不要</span>
+        <div class="hero-chips">
+          <span class="chip">📱 スマホ対応</span>
+          <span class="chip">🔒 データ保存なし</span>
+          <span class="chip">🎁 完全無料</span>
+        </div>
+      </div>
+      <div class="hero-illus" aria-hidden="true">
+        <div class="hero-illus-box">
+          <div class="big-emoji">👩‍🍼</div>
+          <p>赤ちゃんのために<br>ベストな用品を選ぼう</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK INFO BAR -->
+  <div class="quick-bar" aria-label="診断の特徴">
+    <div class="quick-bar-inner">
+      <div class="quick-item">❓ 質問5問</div>
+      <div class="quick-item">⏱ 約1分</div>
+      <div class="quick-item">🆓 完全無料</div>
+      <div class="quick-item">📋 登録不要</div>
+    </div>
+  </div>
+
+  <!-- AD -->
+  <div class="ad-wrap">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>try{(adsbygoogle = window.adsbygoogle || []).push({});}catch(e){}</script>
+  </div>
+
+  <!-- CONCERNS -->
+  <section class="section concerns" id="concerns" aria-labelledby="concerns-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">こんなお悩み、ありませんか？</span>
+        <h2 class="section-title" id="concerns-h2">初めてのベビー用品選びで<br>よくある困りごと</h2>
+      </div>
+      <div class="concerns-grid">
+        <div class="concern-card">
+          <div class="concern-icon">🛒</div>
+          <div class="concern-text">
+            <strong>何が必要かわからない</strong>
+            種類が多すぎて何を買えばいいか、優先順位がつけられない
+          </div>
+        </div>
+        <div class="concern-card">
+          <div class="concern-icon">💰</div>
+          <div class="concern-text">
+            <strong>予算内に収めたい</strong>
+            全部揃えると高額に。本当に必要なものだけに絞りたい
+          </div>
+        </div>
+        <div class="concern-card">
+          <div class="concern-icon">🏠</div>
+          <div class="concern-text">
+            <strong>住まいに合うか不安</strong>
+            1LDKのマンションでも使えるベビーベッド選びが難しい
+          </div>
+        </div>
+        <div class="concern-card">
+          <div class="concern-icon">🤔</div>
+          <div class="concern-text">
+            <strong>レンタルか購入か迷う</strong>
+            抱っこひも・ベビーカーは買うべきか借りるべきか判断できない
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features" aria-labelledby="features-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">この診断の特長</span>
+        <h2 class="section-title" id="features-h2">あなたにぴったりの提案を<br>5問でお届けします</h2>
+        <p class="section-sub">月齢・住まい・予算に合わせた厳選リストをその場で確認</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">月齢別の必需品リスト</div>
+          <div class="feature-desc">出産前から1歳まで、時期ごとに本当に必要なアイテムを厳選してご提案します。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <div class="feature-title">レンタル vs 購入の判断基準</div>
+          <div class="feature-desc">ベビーベッド・抱っこひもなど高額アイテムについて賢い選択肢をアドバイス。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💴</div>
+          <div class="feature-title">予算に合わせた節約ポイント</div>
+          <div class="feature-desc">予算10万円以下から40万円まで、費用を最適化するための具体的なヒント。</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <div class="feature-title">住まいに合ったアイテム選び</div>
+          <div class="feature-desc">1LDKから広めの一軒家まで、生活空間に合った使いやすい製品をご提案。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section steps-bg" id="how" aria-labelledby="steps-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">診断はかんたん3ステップ</span>
+        <h2 class="section-title" id="steps-h2">スタートから結果まで<br>約1分で完了</h2>
+      </div>
+      <div class="steps-list">
+        <div class="step-card">
+          <div class="step-num s1">1</div>
+          <div class="step-icon">📝</div>
+          <div class="step-title">質問に回答する</div>
+          <div class="step-desc">月齢・住まい・授乳スタイル・重視点・予算の5問に選択肢をタップするだけ</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num s2">2</div>
+          <div class="step-icon">🔍</div>
+          <div class="step-title">診断結果を確認</div>
+          <div class="step-desc">あなたの状況に合った必需品リストとアドバイスが即座に表示されます</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num s3">3</div>
+          <div class="step-icon">📲</div>
+          <div class="step-title">シェアして準備</div>
+          <div class="step-desc">結果をSNSでシェアしたり、パパと一緒に準備リストとして活用できます</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a class="hero-cta" href="/baby-product-advisor/" style="display:inline-flex;">🍼 今すぐ診断する（無料）</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT PREVIEW -->
+  <section class="section result-preview" id="result-preview" aria-labelledby="result-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">診断結果のイメージ</span>
+        <h2 class="section-title" id="result-h2">こんな結果が届きます</h2>
+        <p class="section-sub">時期別にカテゴリ分けされた具体的なアイテムリストをご提案</p>
+      </div>
+      <div class="result-mock" role="img" aria-label="診断結果プレビュー">
+        <div class="result-mock-head">
+          <h3>🌟 新生児期の必需品 — 0〜3ヶ月に本当に必要なもの</h3>
+          <p>あなたのスタイルに合わせた優先アイテムリスト</p>
+        </div>
+        <div class="result-mock-body">
+          <div class="result-chart-fake">
+            <div class="result-donut">
+              <div class="result-donut-inner">カテゴリ<br>分布</div>
+            </div>
+          </div>
+          <div class="result-items">
+            <div class="result-item"><div class="result-item-dot" style="background:var(--green)"></div>おくるみ・スワドルアップ（必需品★★★）</div>
+            <div class="result-item"><div class="result-item-dot" style="background:var(--yellow)"></div>授乳クッション（必需品★★★）</div>
+            <div class="result-item"><div class="result-item-dot" style="background:var(--pink)"></div>ベビーモニター（推奨★★☆）</div>
+            <div class="result-item"><div class="result-item-dot" style="background:#B0D9C5"></div>沐浴グッズ一式（必需品★★★）</div>
+          </div>
+          <div class="result-share">
+            <button class="share-btn" style="background:#00B900;color:white;">LINE</button>
+            <button class="share-btn" style="background:#1DA1F2;color:white;">𝕏 シェア</button>
+            <button class="share-btn" style="background:#f3f4f6;color:#374151;">📥 保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="reviews" aria-labelledby="reviews-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">カスタマーレビュー</span>
+        <h2 class="section-title" id="reviews-h2">ご利用者の声</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">出産前でなにも分からず、何から揃えればいいか途方に暮れていました。この診断で「本当に必要なもの」が明確になり、無駄買いを防げました！</p>
+          <div class="testimonial-author">30代 / 第1子妊娠中のママ</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">1LDKに住んでいるので大型アイテムを買うか迷っていました。住まいに合わせた提案をもらえてすごく助かりました。レンタルという選択肢も初めて知りました。</p>
+          <div class="testimonial-author">20代 / 生後2ヶ月のパパ</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★☆</div>
+          <p class="testimonial-text">予算10万円で抑えたかったのに最初は何が必要か分からず不安でした。診断後はリストを印刷してパパと一緒に相談できました。シェア機能が便利！</p>
+          <div class="testimonial-author">30代 / 離乳食期のママ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SNS -->
+  <section class="section sns-section" aria-label="SNSでシェア">
+    <div class="section-inner" style="text-align:center;">
+      <span class="section-label">友人・家族と共有しよう</span>
+      <h2 class="section-title" style="margin-bottom:8px;">診断結果を<br>シェアする</h2>
+      <p class="section-sub">パパ・ママ・祖父母と一緒にベビー用品を準備しよう</p>
+      <div class="sns-icons">
+        <a class="sns-icon" style="background:#00B900;" href="https://line.me/R/msg/text/?ベビー用品選び診断%0Ahttps%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" aria-label="LINEでシェア">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </a>
+        <a class="sns-icon" style="background:#1DA1F2;" href="https://twitter.com/intent/tweet?text=ベビー用品選び診断%20%23無料ツール%20%23育児&url=https%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" aria-label="Xでシェア">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.849L1.485 2.25H8.04l4.26 5.631L18.245 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="sns-icon" style="background:#1877F2;" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappadaycreator.com%2Fbaby-product-advisor%2F" target="_blank" rel="noopener" aria-label="Facebookでシェア">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-h2">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">よくある質問</span>
+        <h2 class="section-title" id="faq-h2">FAQ</h2>
+      </div>
+      <div style="max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
+        <details style="background:white; border-radius:16px; padding:20px 24px; box-shadow:var(--shadow);">
+          <summary style="font-weight:700; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">Q. 個人情報は収集されますか？<span>▼</span></summary>
+          <p style="margin-top:12px; font-size:13px; color:var(--text-mid); line-height:1.8;">入力した情報はサーバーに送信されず、お使いのデバイス内のみで処理されます。完全にプライベートです。</p>
+        </details>
+        <details style="background:white; border-radius:16px; padding:20px 24px; box-shadow:var(--shadow);">
+          <summary style="font-weight:700; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">Q. 何度でも使えますか？<span>▼</span></summary>
+          <p style="margin-top:12px; font-size:13px; color:var(--text-mid); line-height:1.8;">はい、何度でも無料でご利用いただけます。月齢が変わるたびに診断し直すと新しいアドバイスが得られます。</p>
+        </details>
+        <details style="background:white; border-radius:16px; padding:20px 24px; box-shadow:var(--shadow);">
+          <summary style="font-weight:700; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">Q. スマートフォンで使えますか？<span>▼</span></summary>
+          <p style="margin-top:12px; font-size:13px; color:var(--text-mid); line-height:1.8;">はい、スマートフォン・タブレット・PCすべてに対応しています。外出先でもお使いいただけます。</p>
+        </details>
+        <details style="background:white; border-radius:16px; padding:20px 24px; box-shadow:var(--shadow);">
+          <summary style="font-weight:700; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">Q. 結果はどのくらい正確ですか？<span>▼</span></summary>
+          <p style="margin-top:12px; font-size:13px; color:var(--text-mid); line-height:1.8;">育児専門家の知見をもとに設計していますが、あくまで参考情報です。最終的な判断はご家族でご相談ください。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-bottom" aria-labelledby="cta-h2">
+    <h2 id="cta-h2">今すぐ無料で<br>診断してみよう</h2>
+    <p>質問5問・約1分・登録不要で<br>あなたにぴったりのベビー用品リストを受け取ろう</p>
+    <a class="cta-big-btn" href="/baby-product-advisor/">
+      🍼 無料で診断スタート
+    </a>
+    <p class="cta-note">完全無料・データ送信なし・いつでも使える</p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="https://appadaycreator.github.io/" target="_blank" rel="noopener noreferrer">AppADayCreator</a>
+      | <a href="/baby-product-advisor/privacy-policy.html">プライバシーポリシー</a>
+      | <a href="/baby-product-advisor/terms.html">利用規約</a>
+      | <a href="/baby-product-advisor/contact.html">お問い合わせ</a>
+    </p>
+    <p style="margin-top:6px; opacity:0.6;">© 2026 AppADayCreator. All services are free.</p>
+  </footer>
+</body>
+</html>
