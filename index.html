@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ベビー用品選び診断【無料】無料診断・アドバイス</title>
     <meta name="description" content="赤ちゃんの月齢・生活スタイル・予算から必要なベビー用品の優先順位と選び方ポイントを診断">
-<meta name="author" content="AppADayCreator | Tech&Brace">
+<meta name="author" content="AppADayCreator">
     <link rel="canonical" href="https://appadaycreator.com/baby-product-advisor/">
     <meta name="theme-color" content="#6DB88A">
     <link rel="manifest" href="/baby-product-advisor/manifest.json">
@@ -24,7 +24,10 @@
     <link rel="dns-prefetch" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <!-- GTM -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+    <!-- Consent Mode v2 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});(function(){try{var k='cookie-consent-v2',o='cookie-consent';var c=localStorage.getItem(k);if(!c&&localStorage.getItem(o)==='1')c='granted';if(c){var s=c==='granted'?'granted':'denied';gtag('consent','update',{'analytics_storage':s,'ad_storage':s,'ad_user_data':s,'ad_personalization':s});}}catch(e){}})();</script>
+<!-- End Consent Mode v2 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
     <!-- Clarity -->
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
     <!-- AdSense -->
@@ -92,7 +95,9 @@
 
         /* QUIZ */
         .quiz-option-btn { width: 100%; padding: 13px 16px; margin-bottom: 10px; border: 2px solid #E8DADA; border-radius: 14px; font-size: 14px; cursor: pointer; background: #fff; text-align: left; font-family: inherit; font-weight: 500; color: var(--text); transition: border-color .2s, background .2s; }
-        .quiz-option-btn:hover { border-color: var(--green); background: var(--green-light); }
+        .quiz-option-btn:hover:not(:disabled) { border-color: var(--green); background: var(--green-light); }
+        .quiz-option-btn.selected { border-color: var(--green-dark); background: var(--green-light); font-weight: 600; }
+        .quiz-option-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
         /* PROGRESS */
         #q-bar { height: 100%; background: linear-gradient(90deg, var(--green) 0%, #5AAA78 100%); border-radius: 2px; transition: width .3s; width: 20%; }
@@ -111,6 +116,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://appadaycreator.com/", "name": "AppADayCreator"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://appadaycreator.com/baby-product-advisor/", "name": "ベビー用品選び診断"}}]}</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDPNYD2875"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZDPNYD2875',{send_page_view:false});</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"「ベビー用品選び診断」は無料で使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい、完全無料・登録不要です。"}},{"@type":"Question","name":"スマートフォンでも使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい、モバイル対応済みです。"}}]}</script>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -146,6 +152,9 @@
   <span style="margin:0 .35rem;color:#C0A8A8">›</span>
   <span style="color:var(--text)">診断ページ</span>
 </nav>
+<!-- ogp-hero-baby-product-advisor -->
+<div style="width:100%;overflow:hidden;background:#f8fafc"><img src="/baby-product-advisor/ogp.png" alt="ベビー用品選び診断【無料】無料診断・アドバイス" style="width:100%;max-height:320px;object-fit:cover;display:block"></div>
+
 
 
     <main id="main-content" class="container" role="main" aria-label="ベビー用品選び診断のメインコンテンツ">
@@ -283,6 +292,16 @@
               <button id="export-btn" class="btn" style="flex:1;min-width:140px;background:#5AAA78;" onclick="exportResult()" aria-label="結果をダウンロード">📥 ダウンロード</button>
               <button class="btn" style="flex:1;min-width:140px;background:#E8A830;" onclick="openGoalModal()" aria-label="目標を設定">📌 目標を設定</button>
             </div>
+            <!-- M1: 診断後の文脈CTAボタン -->
+            <div id="result-cta-block" style="margin-top:20px;padding:16px;background:var(--green-light);border:2px solid #B8E0C8;border-radius:12px;">
+              <p style="font-size:13px;font-weight:700;color:var(--green-dark);margin:0 0 12px;">👉 診断結果に基づいたおすすめ商品</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;">
+                <a id="cta-amazon" href="https://amazon.co.jp/s?k=ベビー用品" target="_blank" rel="noopener noreferrer" style="display:block;padding:10px;background:white;border:1px solid #ddd;border-radius:8px;text-align:center;text-decoration:none;color:#FF9900;font-weight:600;font-size:13px;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#FFF9F5'" onmouseout="this.style.background='white'">🛍️ Amazonで購入</a>
+                <a id="cta-rakuten" href="https://search.rakuten.co.jp/search/mall/ベビー用品/" target="_blank" rel="noopener noreferrer" style="display:block;padding:10px;background:white;border:1px solid #ddd;border-radius:8px;text-align:center;text-decoration:none;color:#CC0000;font-weight:600;font-size:13px;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#FFF9F5'" onmouseout="this.style.background='white'">🛍️ 楽天市場</a>
+                <a id="cta-a8" href="https://px.a8.net/svt/ejp?a8mat=ZHTB23+9I8S4I+50+ZDFGZ" target="_blank" rel="noopener noreferrer" style="display:block;padding:10px;background:white;border:1px solid #ddd;border-radius:8px;text-align:center;text-decoration:none;color:#4f46e5;font-weight:600;font-size:13px;cursor:pointer;transition:.2s;" onmouseover="this.style.background='#FFF9F5'" onmouseout="this.style.background='white'">💳 A8.net経由</a>
+              </div>
+              <p style="font-size:11px;color:#6b7280;margin:8px 0 0;text-align:center;">※各商品は診断カテゴリに基づいた検索結果です</p>
+            </div>
           </div>
           <div id="goal-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;">
             <div class="card" style="max-width:400px;width:100%;margin:0;">
@@ -297,7 +316,7 @@
               <div style="margin-bottom:16px;">
                 <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:6px;">📊 目標スコア（1-10）</label>
                 <div style="display:flex;gap:12px;align-items:center;">
-                  <input type="range" id="goal-target-score" min="1" max="10" value="5" style="flex:1;cursor:pointer;height:8px;border-radius:4px;background:linear-gradient(to right, #3B82F6 0%, #3B82F6 50%, #e5e7eb 50%, #e5e7eb 100%);-webkit-appearance:none;appearance:none;">
+                  <input type="range" id="goal-target-score" min="1" max="10" value="5" placeholder="目標スコアを選択" title="1〜10の値を選んでください" style="flex:1;cursor:pointer;height:8px;border-radius:4px;background:linear-gradient(to right, #3B82F6 0%, #3B82F6 50%, #e5e7eb 50%, #e5e7eb 100%);-webkit-appearance:none;appearance:none;" aria-label="目標スコア入力スライダー">
                   <span id="goal-score-display" style="font-size:16px;font-weight:700;color:#3B82F6;min-width:40px;text-align:center;">5</span>
                 </div>
                 <style>
@@ -371,9 +390,12 @@
 <section aria-labelledby="faq-h" class="bg-white rounded-2xl shadow-md p-4 mb-4" style="max-width:740px;margin-left:auto;margin-right:auto">
   <h2 id="faq-h" style="font-size:1.05rem;font-weight:700;margin-bottom:12px;border-left:4px solid #4f46e5;padding-left:10px;">よくある質問</h2>
   <dl style="line-height:1.8;">
-    
-    
-    
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 育児に最低限必要なベビー用品はどれですか？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">赤ちゃんの誕生前に準備すべき最低限のベビー用品として「寝具（ベビーベッドまたは添い寝用グッズ）」「衣類（肌着・ロンパース・季節に合わせた枚数）」「授乳グッズ（母乳の場合：授乳ブラ・授乳クッション・哺乳瓶（念のため）、ミルクの場合：哺乳瓶・消毒器・ミルク）」「おむつ・おしりふき」「バスグッズ（ベビーバス・ベビーソープ）」「チャイルドシート（車を使う場合は必須・退院時から必要）」があります。最初から全て揃える必要はなく、「まずは最低限・足りないものは後から追加購入」が無駄なく準備する方法です。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. ベビーカーの選び方・A型とB型の違いは？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">ベビーカーの種類と選び方として「A型：生後1ヶ月（首すわり前）から使用可能・リクライニングが深い・重くかさばりやすい（4〜7kg程度）」「B型：生後7ヶ月頃（腰がすわってから）から使用可能・軽くコンパクト（2〜4kg）・折り畳みやすい」「AB型（両用）：新生児から使えてコンパクト・価格は高め」があります。選び方のポイントとして「使用環境（電車移動が多い→軽量コンパクト型、舗装されていない道が多い→大きな車輪型）」「折り畳みやすさ・収納サイズ（車のトランク・玄関スペースに入るか）」があります。レンタルで試してから購入する方法もおすすめです。</dd>
+    <dt style="font-weight:600;color:#1e293b;padding:8px 0 4px">Q. 離乳食の開始時期・進め方の基本は？</dt>
+    <dd style="font-size:.875rem;color:#475569;margin:0 0 12px;padding-left:12px;line-height:1.8">離乳食の基本として「開始時期は生後5〜6ヶ月頃が目安（首がしっかりすわる・食べ物に興味を示す・よだれが増えるサインが出たら）」「最初はなめらかにすりつぶしたポタージュ状から始める」「1種類ずつ試して2〜3日は同じものを続けてアレルギー反応を確認する」「食物アレルギー7大アレルゲン（卵・小麦・乳・そば・落花生・えび・かに）は初めて食べる際に少量から・病院が開いている日の午前中に試す」があります。厚生労働省の「授乳・離乳の支援ガイド（2019年改定版）」が参考資料として公式に推奨されています。</dd>
   </dl>
 </section>
 <!-- r27-tool-guide -->
@@ -419,23 +441,11 @@
 <div style="margin:1.5rem auto;max-width:760px;padding:0 1rem">
 <div style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08)">
 <h2 style="font-size:1.05rem;font-weight:700;margin:0 0 1rem;border-left:4px solid #4f46e5;padding-left:10px;color:#1e293b">よくある質問（詳細）</h2>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 保育園と幼稚園の違いは何ですか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 保育園（保育所）は厚生労働省管轄で、保護者が就労等で保育できない0〜5歳の子どもを預かる施設です。幼稚園は文部科学省管轄で、3〜5歳の幼児の教育を目的とした学校です。最近は両方の機能を持つ「認定こども園」も増えています。</p>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:12px">
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 赤ちゃんのためのチャイルドシートの選び方は？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">チャイルドシートは「道路交通法により6歳未満の子どもに着用義務がある」安全装備です。種類と選び方として「乳児用（0〜1歳・体重9〜13kg未満まで）：後向きに設置するタイプ・衝突安全性が高い」「幼児用（1〜4歳・体重9〜18kg）：前向き設置が可能になる」「学童用（4〜10歳程度）：シートベルト固定のジュニアシート」「乳幼児兼用タイプ：コスト削減できるが成長とともに買い替えが不要な場合と必要な場合がある」があります。選択基準として「車への取り付け方法（ISOFIX固定が安全かつ簡単）」「使いやすさ（乗せ降ろしのしやすさ）」「安全試験の合格・認定」が重要です。</p></div>
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. ベビーモニター・見守りカメラは必要ですか？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">ベビーモニター（見守りカメラ）の活用について「夜間の就寝中・昼寝中のモニタリング（別室にいながら赤ちゃんの様子を確認できる）」「SIDS（乳幼児突然死症候群）の早期発見に役立てたいという用途（ただし医療機器ではなく完全な防止はできない）」「育児の負担軽減・安心感（毎回部屋に確認しに行く手間が省ける）」があります。必須ではありませんが「親が赤ちゃんの近くにいられない時間がある（別室で作業・外出中にパートナーが一人で対応）」などの場合は特に役立ちます。音声・映像・気温計測・AI動作検知などの機能は機種によって異なります。</p></div>
+<div style="border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px"><p style="font-weight:600;color:#1e293b;margin:0 0 6px">Q. 育児に役立つアプリ・ツールはどんなものがありますか？</p><p style="font-size:.875rem;color:#475569;line-height:1.8;margin:0">育児を支援するアプリ・ツールとして「授乳・ミルク・オムツ交換の記録アプリ（Tinybeans・ぴよログ等）：授乳量・間隔を記録して保健師・小児科医への情報共有に役立つ」「離乳食記録アプリ：食材の段階管理・アレルギー確認ができるもの」「予防接種スケジュール管理アプリ（VaciStage等）：複数ワクチンの接種時期を自動管理」「母子手帳アプリ（自治体公式）：健診・予防接種の予約ができる場合がある」があります。保育所の送迎・連絡帳のデジタル化（コドモン・HugKum等）は保護者の利便性を大幅に向上させており、多くの保育施設で導入が進んでいます。</p></div>
 </div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 子どもの発育の遅れが心配な場合はどうすればいいですか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 発育には個人差があります。歩行・言葉などの発達目安はあくまで平均値です。気になる点がある場合は定期的な乳幼児健診（1歳6か月健診・3歳児健診等）で専門家に相談してください。市区町村の子育て支援センターでも相談できます。</p>
-</div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: チャイルドシート・ベビーカーの安全基準は？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: チャイルドシートは道路交通法で6歳未満の子どもへの使用が義務付けられています。国連安全基準（ECE R44またはR129）に適合した製品を選びましょう。ベビーカーはSG基準適合品が安全です。</p>
-</div>
-<div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #f1f5f9">
-<p style="font-size:.9rem;font-weight:700;color:#1e293b;margin:0 0 .5rem">Q: 学資保険とNISAではどちらが教育資金準備に向いていますか？</p>
-<p style="font-size:.85rem;color:#475569;line-height:1.8;margin:0">A: 学資保険は死亡保障と貯蓄を兼ねる商品で、返戻率が100%を超える商品もありますが低金利の影響で選択肢が減っています。新NISAは非課税で運用できるため長期投資に向いていますが元本保証はありません。どちらが向いているかはライフプランや家族構成によって異なります。</p>
-</div>
-
 </div>
 </div>
 <!-- r31-tool-notice -->
@@ -601,6 +611,14 @@
       });
     }
 
+    // M1: 診断カテゴリに応じた CTA キーワード定義
+    const CTA_KEYWORDS = {
+      0: '出産準備グッズ',
+      1: '新生児用品',
+      2: 'ハイチェア・離乳食',
+      3: 'ベビーゲート・安全グッズ'
+    };
+
     function displayResult(result, date) {
       document.getElementById('quiz-area').style.display = 'none';
       document.getElementById('quiz-start').style.display = 'none';
@@ -610,6 +628,13 @@
       document.getElementById('score-display').style.display = 'block';
       document.getElementById('result-chart-container').style.display = 'block';
       document.getElementById('result').classList.add('show');
+
+      // M1: 診断カテゴリに基づいた CTA ボタンのリンク更新
+      const categoryIdx = result.best;
+      const keyword = CTA_KEYWORDS[categoryIdx] || 'ベビー用品';
+      document.getElementById('cta-amazon').href = `https://amazon.co.jp/s?k=${encodeURIComponent(keyword)}`;
+      document.getElementById('cta-rakuten').href = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(keyword)}/`;
+
       setTimeout(() => renderChart(result.scores), 100);
     }
 
@@ -648,19 +673,62 @@
       renderQ();
     }
 
+    // M2: 質問説明文定義
+    const QUESTION_HINTS = [
+      'あなたの赤ちゃんの現在の月齢や段階を選んでください',
+      'ご家族の住宅環境を選んでください',
+      '授乳スタイルの予定を選んでください',
+      'ベビー用品選びで最も大切にしていることを選んでください',
+      'ベビー用品準備にかける予算を選んでください'
+    ];
+
     function renderQ(){
       const q=QUESTIONS[cur];
       document.getElementById('q-num').textContent=cur+1;
       document.getElementById('q-bar').style.width=((cur+1)/QUESTIONS.length*100)+'%';
       document.getElementById('q-text').textContent=q.text;
-      document.getElementById('q-options').innerHTML=q.opts.map((o,i)=>`<button onclick="answer(${i})" class="quiz-option-btn">${o}</button>`).join('');
+
+      // M2: 質問説明文を表示（わかりやすさ向上）
+      const hint = QUESTION_HINTS[cur] || '';
+      const hintEl = document.createElement('p');
+      hintEl.style.cssText = 'font-size:12px;color:#999;margin:0 0 12px;font-style:italic;';
+      hintEl.textContent = hint;
+
+      const optionsContainer = document.getElementById('q-options');
+      optionsContainer.innerHTML='';
+      optionsContainer.appendChild(hintEl);
+
+      const buttons = q.opts.map((o,i)=>{
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option-btn';
+        btn.id = `q-opt-${i}`;
+        btn.textContent = o;
+        btn.onclick = () => answer(i);
+        btn.setAttribute('aria-label', `${i+1}番目の選択肢: ${o}`);
+        return btn;
+      });
+      buttons.forEach(btn => optionsContainer.appendChild(btn));
     }
 
     function answer(idx){
+      // M2: 選択肢の視覚フィードバック — selected クラス付与 & 他を disabled
+      const buttons = document.querySelectorAll('.quiz-option-btn');
+      buttons.forEach((btn, i) => {
+        if(i === idx) {
+          btn.classList.add('selected');
+        } else {
+          btn.disabled = true;
+        }
+      });
+
       ans.push({idx});
-      cur++;
-      if(cur>=QUESTIONS.length) showResult();
-      else renderQ();
+
+      // 200ms 待機して視覚フィードバック確認後に次へ
+      setTimeout(() => {
+        cur++;
+        if(cur>=QUESTIONS.length) showResult();
+        else renderQ();
+      }, 200);
     }
 
     function showResult(){
@@ -818,6 +886,13 @@
     </div>
   </div>
 </div>
+<!-- r31-cookie-banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#f1f5f9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;z-index:9999;font-size:.85rem;box-shadow:0 -2px 10px rgba(0,0,0,.3)">
+<div>当サイトはCookieおよびGoogle Analyticsを使用しています。<a href="/privacy-policy.html" style="color:#60a5fa;text-decoration:underline">プライバシーポリシー</a>をご確認ください。</div>
+<button onclick="document.getElementById('cookie-banner').style.display='none';window.grantConsent && window.grantConsent()" style="background:#3b82f6;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:.375rem;font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap">同意して閉じる</button>
+</div>
+<script>if(localStorage.getItem('cookie-consent'))document.getElementById('cookie-banner').style.display='none'</script>
+<script src="/assets/consent-mode.js"></script>
 </body>
 </html>
 
@@ -827,8 +902,8 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/baby-product-advisor/service-worker.js')
-      .then(reg => console.log('SW registered:', reg))
-      .catch(err => console.log('SW registration failed:', err));
+      .then(reg => )
+      .catch(err => );
   });
 }
 
